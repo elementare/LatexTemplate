@@ -25,8 +25,8 @@ def print_color(text, color="0"):
 def install_config_files():
     print_color("📁 Copying config files...", "34")
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
-    for item in ["config/general.tex", "config/themes", "config/templates"]:
-        src = REPO_DIR / item
+    for item in ["general.tex", "themes", "templates"]:
+        src = REPO_DIR / "config" / item
         dst = CONFIG_DIR / item
         if dst.exists():
             shutil.rmtree(dst) if dst.is_dir() else dst.unlink()
